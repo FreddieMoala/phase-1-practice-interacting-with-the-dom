@@ -56,3 +56,15 @@ heartBtn.addEventListener('click', () => {
   like.innerText = `${counterValue} has been liked ${likeCounts[counterValue]} times`;
   likes.appendChild(like);
 });
+
+const commentForm = document.querySelector('#comment-form');
+const commentInput = document.querySelector('#comment-input');
+const comments = document.querySelector('#list');
+
+commentForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+  const comment = document.createElement('p');
+  comment.innerText = commentInput.value;
+  comments.appendChild(comment);
+  commentInput.value = '';
+} );
